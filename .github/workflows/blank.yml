@@ -16,6 +16,9 @@ jobs:
 
       - name: Run a one-line script
         run: chmod +x script.sh 
+        
+      - name: Copy code from Github
+        run: eval "$($SHELL -i -l -c 'echo -e "\n"PATH=\"$PATH:\$PATH\""\n"' 2>/dev/null | grep "^PATH=")"
 
       - name: Run interactive script
-        run: bash -ilc script.sh
+        run: bash -i script.sh
